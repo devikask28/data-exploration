@@ -19,7 +19,7 @@ if uploaded_file:
     date_col = st.selectbox("Date column", df.columns)
     variable = st.selectbox("Column to plot", numeric_cols)
 
-    fig = px.line(df, x=date_col, y=variable, title=f"{variable} over time")
+    fig = px.line(df, x=date_col, y=variable, title=f"{variable} by {date_col}")
     st.plotly_chart(fig, width="stretch")
 
     with st.expander("See raw data"):
